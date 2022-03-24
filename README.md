@@ -43,6 +43,11 @@ CMD ["/usr/local/bin/rr", "serve", "-c", "/var/www/.rr.yaml"]
 
 
 ```php
+use Spiral\Goridge\RPC\RPC;
+use Spiral\RoadRunner\Environment;
+
+// ...
+
 $rpc = RPC::create(Environment::fromGlobals()->getRPCAddress());
 $uuid = $rpc->call('uuid.Generate', 'not-used');
 ```
