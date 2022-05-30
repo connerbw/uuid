@@ -1,6 +1,6 @@
 # Demo UUID RPC plugin for Roadrunner 2.8
 
-Hosted on: https://github.com/ls-dac-chartrand/uuid
+Hosted on: https://github.com/connerbw/uuid
 
 ## HOWTO
 
@@ -11,7 +11,7 @@ Using https://github.com/roadrunner-server/velox
 Add this to your `plugins.toml` file:
 
 ```
-uuid = { ref = "master", owner = "ls-dac-chartrand", repository = "uuid" }
+uuid = { ref = "master", owner = "connerbw", repository = "uuid" }
 ```
 
 And its dependencies:
