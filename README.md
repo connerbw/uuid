@@ -1,6 +1,8 @@
 # Demo UUID RPC plugin for Roadrunner 2.8
 
-Hosted on: https://github.com/connerbw/uuid
+See this tutorial for how to use in Laravel Octane:
+
+https://kizu514.com/blog/compile-a-custom-roadrunner-plugin-for-laravel-octane/
 
 ## HOWTO
 
