@@ -28,19 +28,14 @@ func (p *Plugin) Serve() chan error {
 	// you may also pass this channel to other functions with goroutines to send error from them
 	return errCh
 }
+
 func (p *Plugin) Stop() error {
 	// this function will be called by Endure (rr container) to stop the plugin
 	return nil
 }
 
-// RPC interface implementation, RR will find this interface and automatically expose the RPC endpoint with methods (rpc structure)
-func (p *Plugin) RPC() interface{} {
-	return &rpc{
-		log: p.log,
-	}
-}
 
-// Name This is not mandatory, but if you implement this interface and provide a plugin name, RR will expose the RPC method of this plugin using this name
+// Name this is not mandatory, but if you implement this interface and provide a plugin name, RR will expose the RPC method of this plugin using this name
 func (p *Plugin) Name() string {
 	return ID
 }
@@ -53,6 +48,14 @@ type rpc struct {
 	log *zap.Logger
 }
 
+// RPC interface implementation, RR will find this interface and automatically expose the RPC endpoint with methods (rpc structure)
+func (p *Plugin) RPC() interface{} {
+	return &rpc{
+		log: p.log,
+	}
+}
+
+// Generate this is the function exposed to PHP $rpc->call(), can be any name
 func (r *rpc) Generate(input string, output *string) error {
 	u, err := uuid.NewV4()
 	if err != nil {
