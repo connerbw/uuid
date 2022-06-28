@@ -1,4 +1,4 @@
-module github.com/ls-dac-chartrand/uuid
+module github.com/connerbw/uuid
 
 go 1.18
 
